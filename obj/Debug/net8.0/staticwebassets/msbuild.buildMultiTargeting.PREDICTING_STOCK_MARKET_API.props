@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\PREDICTING_STOCK_MARKET_API.props" />
+</Project>
