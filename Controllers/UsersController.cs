@@ -41,9 +41,19 @@ public class UsersController: ControllerBase{
         var result = await _userManager.CreateAsync(user, model.Password);
 
         if(result.Succeeded){
-            return StatusCode(201);
+            var responseSuccess = new {
+                success = true,
+                message = "Successfully registered"
+            };
+            return StatusCode(201, responseSuccess);
         }
-        return BadRequest(result.Errors);
+
+        var errors = result.Errors.Select(error => error.Description);
+        var errorResponse = new {
+            success = false,
+            message = errors
+        };
+        return BadRequest(errorResponse);
     }
 
     [HttpPost("login")]
@@ -59,7 +69,11 @@ public class UsersController: ControllerBase{
         var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password,false);
 
         if(result.Succeeded){
-            return Ok(new {token = GenerateJWT(user)}); // This code will be changed later.
+            var responseSuccess = new {
+                success = true,
+                message = GenerateJWT(user)
+            };
+            return Ok(responseSuccess); // This code will be changed later.
         }
         return Unauthorized();
     }
