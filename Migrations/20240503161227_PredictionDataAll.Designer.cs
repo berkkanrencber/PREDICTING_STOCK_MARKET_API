@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PREDICTING_STOCK_MARKET_API.Models;
 
@@ -11,9 +12,11 @@ using PREDICTING_STOCK_MARKET_API.Models;
 namespace PREDICTING_STOCK_MARKET_API.Migrations
 {
     [DbContext(typeof(StocksContext))]
-    partial class StocksContextModelSnapshot : ModelSnapshot
+    [Migration("20240503161227_PredictionDataAll")]
+    partial class PredictionDataAll
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -228,138 +231,6 @@ namespace PREDICTING_STOCK_MARKET_API.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("PREDICTING_STOCK_MARKET_API.Models.Prediction1Month", b =>
-                {
-                    b.Property<int>("StockId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockId"));
-
-                    b.Property<string>("LSTM")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("LSTM");
-
-                    b.Property<string>("Prophet")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("Prophet");
-
-                    b.Property<string>("RF")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("RF");
-
-                    b.Property<string>("SelectPrice")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("SelectPrice");
-
-                    b.Property<string>("StockNameAndPrice")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("StockName");
-
-                    b.Property<string>("StockResultSentiment")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("StockResultSentiment");
-
-                    b.HasKey("StockId")
-                        .HasName("PK__Sentimen__2C83A9C265563755");
-
-                    b.ToTable("Prediction1Month");
-                });
-
-            modelBuilder.Entity("PREDICTING_STOCK_MARKET_API.Models.Prediction1Week", b =>
-                {
-                    b.Property<int>("StockId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockId"));
-
-                    b.Property<string>("LSTM")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("LSTM");
-
-                    b.Property<string>("Prophet")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("Prophet");
-
-                    b.Property<string>("RF")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("RF");
-
-                    b.Property<string>("SelectPrice")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("SelectPrice");
-
-                    b.Property<string>("StockNameAndPrice")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("StockName");
-
-                    b.Property<string>("StockResultSentiment")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("StockResultSentiment");
-
-                    b.HasKey("StockId")
-                        .HasName("PK__Sentimen__2C83A95565563755");
-
-                    b.ToTable("Prediction1Week");
-                });
-
-            modelBuilder.Entity("PREDICTING_STOCK_MARKET_API.Models.Prediction3Month", b =>
-                {
-                    b.Property<int>("StockId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StockId"));
-
-                    b.Property<string>("LSTM")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("LSTM");
-
-                    b.Property<string>("Prophet")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("Prophet");
-
-                    b.Property<string>("RF")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("RF");
-
-                    b.Property<string>("SelectPrice")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("SelectPrice");
-
-                    b.Property<string>("StockNameAndPrice")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("StockName");
-
-                    b.Property<string>("StockResultSentiment")
-                        .IsRequired()
-                        .HasColumnType("varchar(512)")
-                        .HasColumnName("StockResultSentiment");
-
-                    b.HasKey("StockId")
-                        .HasName("PK__Sentimen__2C83A9C26FF63755");
-
-                    b.ToTable("Prediction3Month");
                 });
 
             modelBuilder.Entity("PREDICTING_STOCK_MARKET_API.Models.Prediction6Month", b =>

@@ -142,3 +142,4 @@ C:\Users\Berkk\OneDrive\Documents\GitHub\Predicting_Stock_Market_API\PREDICTING_
 C:\Users\Berkk\OneDrive\Documents\GitHub\Predicting_Stock_Market_API\PREDICTING_STOCK_MARKET_API\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Berkk\OneDrive\Documents\GitHub\Predicting_Stock_Market_API\PREDICTING_STOCK_MARKET_API\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\Berkk\OneDrive\Documents\GitHub\Predicting_Stock_Market_API\PREDICTING_STOCK_MARKET_API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Berkk\OneDrive\Documents\GitHub\Predicting_Stock_Market_API\PREDICTING_STOCK_MARKET_API\obj\Debug\net8.0\PREDICTING_STOCK_MARKET_API.sourcelink.json
